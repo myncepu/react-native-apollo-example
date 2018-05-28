@@ -1,9 +1,21 @@
 import React, { Component } from 'react'
 import { StatusBar, View, Text, StyleSheet } from 'react-native'
 import ExchangeRateList from './list'
-import { colors, fontSize } from './styles'
+import { colors, fontSize } from '../../styles'
 
 export default class ExchangeRateView extends Component {
+  static navigationOptions = {
+    title: 'Currency',
+    headerTitleStyle: {
+      color: colors.white,
+      fontSize: fontSize.small,
+      fontWeight: 'bold',
+    },
+    headerStyle: {
+      backgroundColor: colors.teal,
+    },
+  }
+
   state = {
     currency: 'CNY'
   };
@@ -31,7 +43,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
-    backgroundColor: 'darkblue',
+    backgroundColor: colors.teal,
   },
   heading: {
     fontSize: fontSize.large,
